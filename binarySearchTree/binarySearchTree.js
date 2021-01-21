@@ -1,5 +1,3 @@
-const ListNode = require('./listNode');
-
 class BinarySearchTree { 
     constructor() { 
         this.root = null; 
