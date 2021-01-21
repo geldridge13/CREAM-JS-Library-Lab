@@ -2,27 +2,16 @@ const { TestScheduler } = require('jest');
 const Dictionary = require('./Dictionary');
 const ValuePair = require('./keyValuePair');
 
-test("First Test", () => {
-    let dictionary = new Dictionary()
+let dictionary;
+beforeEach(() => {
+    dictionary = new Dictionary()
     dictionary.set("Greg", 1)
-    let actual = {"key": "Greg", "value": 1}
-    let expected = dictionary.table["Greg"]
-
-    console.log(actual)
-
-    expect(expected).toEqual(actual)
-    
+    dictionary.set("Irma", 2)
 });
 
-test("First Test", () => {
-    let dictionary = new Dictionary()
-    dictionary.set("Greg", 1)
-
-    let actual = {"key": "Greg", "value": 1, "key": "Irma", "value": 2}
-    let expected = dictionary.table["Greg"].set("Irma", 2)
-
+test("Add Person", () => {
+    let actual = dictionary.get("Greg")
     console.log(actual)
-
-    expect(actual).toEqual(expected)
-    
+    let expected = 1
+    expect(expected).toEqual(actual)
 });
