@@ -35,11 +35,11 @@ class Stack {
     }
 
     print() {
-        let str = ''
+        let arr = []
         for (let i = 0; i < this.count; i++) {
-            str +=this.items[i] + ' '
+            arr.push(this.items[i])
         }
-        return str
+        return arr
     }
 
     clear() {
@@ -50,30 +50,30 @@ class Stack {
     }
 }
 
-const stack = new Stack()
+// const stack = new Stack()
 
-stack.isEmpty() 
+// stack.isEmpty() 
 
-stack.push(100)
-//console.log(stack.push()) 
-stack.push(200)
+// stack.push(100)
+// //console.log(stack.push()) 
+// stack.push(200)
 
-stack.peek()
+// stack.peek()
 
-stack.push(300)
+// stack.push(300)
 
-console.log(stack.print())
+// console.log(stack.print())
 
-stack.pop()
-stack.pop()
+// stack.pop()
+// stack.pop()
 //stack.pop()
 //console.log(stack.pop())
 
-stack.clear()
+// stack.clear()
 
-console.log(stack.print())
+// console.log(stack.print())
 
-stack.size()
+// stack.size()
 
 //stack.isEmpty()
 
