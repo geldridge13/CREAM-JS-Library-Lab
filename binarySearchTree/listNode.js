@@ -1,9 +1,13 @@
-class ListNode {
+class Node {
     constructor(data) {
         this.data = data
-        this.next = null
-        this.prev = null
+        this.left = null
+        this.right = null
+    }
+
+    getData() {
+        return this.data.data
     }
 }
 
-module.exports = ListNode;
+module.exports = Node;

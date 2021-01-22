@@ -1,3 +1,5 @@
+const Node = require('./listNode');
+
 class BinarySearchTree { 
     constructor() { 
         this.root = null; 
@@ -29,7 +31,11 @@ class BinarySearchTree {
     }
 
     remove(data) { 
-        this.root = this.removeNode(this.root, data); 
+        if(this.root === null){
+            return null;
+        } else {
+            this.root = this.removeNode(this.root, data); 
+        }
     } 
 
     findMinNode(node) { 
