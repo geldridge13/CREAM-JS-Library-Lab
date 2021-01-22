@@ -5,7 +5,7 @@ const StackNumber = require('./StackNumbers');
 test("Empty Stack Test", () => {
 
     let stack = new Stack();
-    let input = "";
+    
     let expected = true;
 
     let actual = stack.isEmpty();
@@ -14,13 +14,100 @@ test("Empty Stack Test", () => {
 });
 
 
-// test("Second Test", () => {
+test("Empty Stack Test 2", () => {
 
-//     let stack = new Stack();
-//     let input = 100;
-//     let expected = 100;
+    let stack = new Stack();
+  
+    let expected = false;
 
-//     let actual = stack.push(100);
+    stack.push(10)
 
-//     expect(actual).toEqual(expected)
-// });
+    let actual = stack.isEmpty();
+
+    expect(actual).toEqual(expected)
+});
+
+test("Push Test", () => {
+
+    let stack = new Stack();
+    
+    let expected = 100;
+
+    stack.push(100);
+    let actual = stack.pop()
+
+    expect(actual).toEqual(expected)
+});
+
+
+test("Peek Test", () => {
+
+    let stack = new Stack();
+    
+    let expected = 100;
+
+    stack.push(100);
+    let actual = stack.peek()
+
+    expect(actual).toEqual(expected)
+});
+
+
+test("Size Test", () => {
+
+    let stack = new Stack();
+    
+    let expected = 3;
+
+    stack.push(100);
+    stack.push(200);
+    stack.push(300);
+
+    let actual = stack.size()
+
+    expect(actual).toEqual(expected)
+});
+
+
+test("Print Test", () => {
+
+    let stack = new Stack();
+    
+    let expected = [100, 200, 300];
+
+    stack.push(100),
+    stack.push(200),
+    stack.push(300);
+
+    let actual = stack.print()
+
+    expect(actual).toEqual(expected)
+});
+
+
+test("Clear Test", () => {
+
+    let stack = new Stack();
+    
+    let expected = [];
+
+    stack.push(100)
+    stack.push(200)
+    stack.push(300);
+
+    let actual = stack.clear()
+
+    expect(actual).toEqual(expected)
+});
+
+
+test("Clear Empty Stack", () => {
+
+    let stack = new Stack();
+    
+    let expected = [];
+
+    let actual = stack.clear()
+
+    expect(actual).toEqual(expected)
+});
