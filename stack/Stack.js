@@ -48,7 +48,29 @@ class Stack {
         console.log('Stack cleared..')
         return this.items
     }
-}
+
+    length() {
+        return this.top;
+     }
+
+    isPalindrome(str) {
+        //let s = new Stack();
+        for (let i = 0; i < str.length; ++i) {
+           s.push(str[i]);
+        }
+        var rword = " ";
+        while (s.length() > 0) {
+           rword += s.pop();
+        }
+        if (str == rword) {
+            return 'This is a Palindrome';
+        }
+        else {
+           return 'This is Not a Palindrome';
+        }
+     }
+
+    
 
 // const stack = new Stack()
 
@@ -71,10 +93,10 @@ class Stack {
 
 // stack.clear()
 
-// console.log(stack.print())
+// console.log(stack.print())   
 
 // stack.size()
 
 //stack.isEmpty()
-
+}
 module.exports = Stack;
