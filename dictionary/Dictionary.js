@@ -7,7 +7,7 @@ class Dictionary {
     }
 
     hasKey(key) {
-        return this.table[this.toStrFn()] != null;
+        return this.table[this.toStrFn(key)] != null;
     }
 
     set(key, value) {
@@ -23,6 +23,39 @@ class Dictionary {
         const valuePair = this.table[this.toStrFn(key)];
         return valuePair == null ? undefined : valuePair.value;
     }
+
+    remove(key) {
+        if (this.hasKey(key)) {
+            delete this.table[this.toStrFn((key))];
+            return true;
+        }
+        return false;
+    }
+
+    keyValues() {
+        return Object.values(this.table);
+    }
+
+    size() {
+        return this.keyValues().length;
+    }
+
+    clear() {
+        this.table = {};
+    }
+
+    isEmpty() {
+        return this.size() === 0;
+    }
+
+    keys() {
+        return this.keyValues().map(valuePair => valuePair.key);
+    }
+
+    values() {
+        return this.keyValues().map(valuePair => valuePair.value);
+    }
+
 
 
 }
