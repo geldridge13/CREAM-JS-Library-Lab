@@ -1,6 +1,5 @@
 const { TestScheduler } = require('jest');
 const Stack = require('./Stack');
-const StackNumber = require('./StackNumbers');
 
 test("Empty Stack Test", () => {
 
@@ -93,7 +92,7 @@ test("Clear Test", () => {
 
     stack.push(100)
     stack.push(200)
-    stack.push(300);
+    stack.push(300)
 
     let actual = stack.clear()
 
@@ -108,6 +107,19 @@ test("Clear Empty Stack", () => {
     let expected = [];
 
     let actual = stack.clear()
+
+    expect(actual).toEqual(expected)
+});
+
+
+test("Palindrome", () => {
+
+    let stack = new Stack();
+    let str = "civic";
+    let expected = 'This is a Palindrome';
+    
+    
+    let actual = stack.isPalindrome(str)
 
     expect(actual).toEqual(expected)
 });
