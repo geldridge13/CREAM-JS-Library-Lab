@@ -6,7 +6,7 @@ class Node {
     }
 
     getData() {
-        return this.data.data
+        return this.data
     }
 }
 

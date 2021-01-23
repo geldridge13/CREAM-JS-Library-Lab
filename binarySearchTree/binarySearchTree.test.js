@@ -38,46 +38,51 @@ test("remove(data) Remove A Node - No Nodes - Should Return null", () => {
 test("remove(data) Remove A Node - With Other Nodes - Returns Removed Node", () => {
     list.insert(node1)
     list.insert(node2)
-    list.insert(node3)
     console.log(list.getRootNode())
-    let expected = 20
-    let actual = list.remove(node2)
+    let data = list.remove(10)
+    console.log(list.getRootNode())
+
+    let expected = 10
+    let actual = data
 
     expect(actual).toEqual(expected)
 });
-// test("findMinNode(node) Find Min Node - No Other Nodes", () => {
-//     list.insert(node1)
-//     list.insert(node2)
-//     let expected
-//     let actual
-// });
-// test("findMinNode(node) Find Min Node - With Other Nodes", () => {
-//     list.insert(node1)
-//     list.insert(node2)
-//     let expected
-//     let actual
-// });
-// test("getRootNode() Find Root Node - No Other Nodes", () => {
-//     list.insert(node1)
-//     list.insert(node2)
-//     let expected
-//     let actual
-// });
-// test("getRootNode() Find Root Node - With Other Nodes", () => {
-//     list.insert(node1)
-//     list.insert(node2)
-//     let expected
-//     let actual
-// });
-// test("search(node) Find Specified Node - With Other Nodes", () => {
-//     list.insert(node1)
-//     list.insert(node2)
-//     let expected
-//     let actual
-// });
-// test("findMinNode(node) Find Specified Node - No Other Nodes", () => {
-//     list.insert(node1)
-//     list.insert(node2)
-//     let expected
-//     let actual
-// });
+test("findMinNode(node) Find Min Node - No Other Nodes", () => {
+    let expected = null
+    let actual = list.findMinNode(node1)
+
+    expect(actual).toEqual(expected)
+});
+test("getRootNode() Find Root Node - No Other Nodes", () => {
+    list.insert(node1)
+    let expected = 10
+    let actual = list.getRootNode().getData()
+
+    expect(actual).toEqual(expected)
+});
+test("getRootNode() Find Root Node - With Other Nodes", () => {
+    list.insert(node1)
+    list.insert(node2)
+    let expected = 10
+    let actual = list.getRootNode().getData()
+
+    expect(actual).toEqual(expected)
+});
+test("search(node) Find Specified Node - With Other Nodes", () => {
+    list.insert(node1)
+    list.insert(node2)
+    list.insert(node3)
+    let expected = list.root
+    let actual = list.search(list.root, 10)
+
+    expect(actual).toEqual(expected)
+});
+test("findMinNode(node) Find Specified Node - No Other Nodes", () => {
+    list.insert(node1)
+    list.insert(node2)
+    list.insert(node3)
+    let expected = node1
+    let actual = list.findMinNode(list.getRootNode())
+
+    expect(actual).toEqual(expected)
+});
