@@ -33,12 +33,20 @@ class BinarySearchTree {
     remove(data) { 
         if(this.root === null){
             return null;
-        } else {
+        }
+        try{
             this.root = this.removeNode(this.root, data); 
+            if(data != null) return data
+            else throw error
+        } catch (error) {
+            console.log("This Value Is Null")
         }
     } 
 
     findMinNode(node) { 
+        if(this.getRootNode() === null) {
+            return null
+        }
         if(node.left === null) {
             return node; 
         }
@@ -78,7 +86,10 @@ class BinarySearchTree {
     } 
 
     getRootNode() { 
-        return this.root; 
+        if(this.root === null) {
+            return null
+        }
+        return this.root.data; 
     } 
 
     search(node, data) { 
