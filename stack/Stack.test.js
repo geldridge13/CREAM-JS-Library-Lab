@@ -112,14 +112,4 @@ test("Clear Empty Stack", () => {
 });
 
 
-test("Palindrome", () => {
 
-    let stack = new Stack();
-    let str = "civic";
-    let expected = 'This is a Palindrome';
-    
-    
-    let actual = stack.isPalindrome(str)
-
-    expect(actual).toEqual(expected)
-});
